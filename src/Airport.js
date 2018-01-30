@@ -1,14 +1,15 @@
 function Airport() {
-  _hangar = [];
+  this._hangar = [];
 };
 
 Airport.prototype = {
     land: function(plane) {
+      console.log(plane.isFlying())
       if (!plane.isFlying()) {
         throw new Error("Cannot land plane if it has already landed");
       }
       plane.land();
-      _hangar.push(plane);
+      this._hangar.push(plane);
     },
-    hangar: function() { return _hangar; }
+    hangar: function() { return this._hangar; }
 }
