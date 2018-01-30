@@ -1,5 +1,5 @@
 function Plane() {
-  var _Flying = false
+  var _Flying;
 }
 
 Plane.prototype = {
