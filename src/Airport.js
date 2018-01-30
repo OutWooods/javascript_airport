@@ -1,5 +1,11 @@
-function Airport() {};
+function Airport() {
+  _hangar = [];
+};
 
 Airport.prototype = {
-    land: function(plane) { plane.land()}
+    land: function(plane) {
+      plane.land();
+      _hangar.push(plane);
+    },
+    hangar: function() { return _hangar; }
 }

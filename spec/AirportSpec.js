@@ -13,4 +13,11 @@ describe("Airport", function() {
     expect(plane.land).toHaveBeenCalled();
   });
 
+  it("should have one more plane in hangar", function() {
+    plane = jasmine.createSpyObj('Plane', ['land']);
+    airport.land(plane);
+    expect(airport.hangar()).toEqual([plane]);
+    expect(airport.hangar()).toContain(plane);
+  });
+
 });
